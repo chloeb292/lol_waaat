@@ -1,3 +1,10 @@
+<ul class="breadcrumb">
+    <li><a href="/leagues">Leagues</a></li> 
+    <li> <a href="/series?league_id={{match[0]['league_id']}}">  Series </a></li>
+    <li> <a href="/tournaments?serie_id={{match[0]['serie_id']}}">  Tournaments </a></li>
+    <li> <a href="/matches?tournament_id={{match[0]['tournament_id']}}">  Matches </a></li>
+    <Li> Match Info</Li>
+ </ul>
 
 
 {% extends "base.html" %}

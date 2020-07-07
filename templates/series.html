@@ -15,7 +15,7 @@
 
     <ul style="font-size:20px;">
         {% for s in series %}
-        <li><a href="/tournaments/serie_id={{ s['id'] }}">{{s['full_name'] }}</a></li>
+        <li><a href="/tournaments?serie_id={{ s['id'] }}">{{s['full_name'] }}</a></li>
         {% endfor %}
     </ul>
 
