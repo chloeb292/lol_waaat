@@ -37,7 +37,6 @@ def series():
 
 @app.route("/tournaments")
 def tournaments(): 
-    serie_id = request.args["serie_id"]
     tournaments = ps.get_tournaments(serie_id)
     return render_template("tournaments.html", message="These are the tournaments for the series", tournaments = tournaments);   
 
