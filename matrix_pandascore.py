@@ -33,6 +33,8 @@ def get_leagues():
     return json.loads(raw_json)
 
 
+# comment for this function 
+# get_series(league_id)
 def get_series(league_id):
     token = "?token=%s" % _TOKEN
     params= "&filter[league_id]=%s" % league_id
