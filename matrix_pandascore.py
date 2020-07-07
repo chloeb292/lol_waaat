@@ -19,12 +19,11 @@ _TOKEN = "2VFXG97HWPjCekpX7HpLMCAZQgr15N2NN5spSg89bGBw2s4vG1Q"
 
 # lookup a single series from the serie 
 # TAKE PARAM FOR LEAGUE_ID
+
 def get_leagues():
     token = "?token=%s" % _TOKEN
-    params= "&filter[league_id]=%s" % league_id
     og_url = ("https://api.pandascore.co/lol/leagues")
-    url = og_url + token + params
-    print(url)
+    url = og_url + token
     # Make a normal HTTP request to the endpoint, getting a response object
     response = requests.get(url)
     # we're going to UTF-8 decode the byte array into a normal string. 
@@ -33,8 +32,6 @@ def get_leagues():
     return json.loads(raw_json)
 
 
-# comment for this function 
-# get_series(league_id)
 def get_series(league_id):
     token = "?token=%s" % _TOKEN
     params= "&filter[league_id]=%s" % league_id
