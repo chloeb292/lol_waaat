@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<ul class="breadcrumb">
+    {% if route_rule == '/leagues' %}
+        <Li> Leagues</Li>
+    {% endif %}
+
+    {% if route_rule == '/series/<league_id>' %}
+        <li><a href="/leagues">Leagues</a></li> 
+        <Li> Series</Li>
+    {% endif %}
+
+    {% if route_rule == '/tournaments' %}
+        <li><a href="/leagues">Leagues</a></li> 
+        <li> <a href="/series/{{tournaments[0]['serie_id']}}">  Series </a></li>
+        <Li> Tournaments</Li>
+    {% endif %}
+
+</ul>
+{% endblock %}

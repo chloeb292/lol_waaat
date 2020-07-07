@@ -1,0 +1,18 @@
+<ul class="breadcrumb"> 
+    <Li> Leagues</Li>
+ </ul>
+
+
+{% extends "base.html" %}
+{% block content %}
+    <h1 style="color:whitesmoke;">{{ message }}</h1>
+
+    <ul style="font-size:20px;">
+
+        {% for league in leagues %}
+        <li><a href="/series?league_id={{ league['id'] }}">{{ league['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+

@@ -1,0 +1,37 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 style="color:whitesmoke;">{{ message }}</h1>
+
+    <ul style="font-size:30px;">
+        
+        {% for o in match %}
+        <img src="{{ o['opponents'][0]['opponent']['image_url'] }}"  width="150" height="200">
+        <li><a href="/players/{{ o['opponents'][0]['opponent']['id'] }}">{{o['opponents'][0]['opponent']['name'] }}</a></li>
+            {% for t in team1 %}
+                <img src="{{ t['image_url'] }}" alt ="picture" width="150" height="150" img style="border:5px double pink;">
+                <li><b>{{ t['last_name'] }}, {{ t['first_name'] }}</b></li>
+                <ul>
+                    <li>Gamer Name: {{ t['name'] }}</li>
+                    <li>Role: {{ t['role'] }}</li>
+                    <h1></h1>
+                </ul>
+            {% endfor %}
+
+        <img src="{{ o['opponents'][1]['opponent']['image_url'] }}"  width="150" height="200">
+        <li><a href="/players/{{ o['opponents'][1]['opponent']['id'] }}">{{o['opponents'][1]['opponent']['name'] }}</a></li>
+            {% for t in team2 %}
+            <img src="{{ t['image_url'] }}" alt ="picture" width="150" height="150" img style="border:5px double pink;">
+            <li><b>{{ t['last_name'] }}, {{ t['first_name'] }}</b></li>
+            <ul>
+                <li>Gamer Name: {{ t['name'] }}</li>
+                <li>Role: {{ t['role'] }}</li>
+                <h1></h1>
+            </ul>
+    {% endfor %}
+        
+        {% endfor %}
+    </ul>
+{% endblock %}

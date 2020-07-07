@@ -1,0 +1,22 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+    <h1 style="color:whitesmoke;">{{ bread['name'] }}:</h1>
+        <ul>
+            {% for p in players %}
+            <img src="{{ p['image_url'] }}" alt ="picture" width="150" height="150" img style="border:5px double pink;">
+            <li><b>{{ p['last_name'] }}, {{ p['first_name'] }}</b></li>
+            <ul>
+                <li>Gamer Name: {{ p['name'] }}</li>
+                <li>Role: {{ p['role'] }}</li>
+                <h1></h1>
+            </ul>
+            {% endfor %}
+        </ul>
+
+{% endblock %}

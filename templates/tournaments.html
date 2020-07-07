@@ -1,0 +1,24 @@
+
+
+
+<ul class="breadcrumb">
+    <li><a href="/leagues">Leagues</a></li> 
+    <li> <a href="/series/league_id={{tournaments[0]['league_id']}}">  Series </a></li>
+    <Li> Tournaments</Li>
+ </ul>
+
+
+{% extends "base.html" %}
+{% block content %}
+
+
+    <h1 style="color:whitesmoke;">{{ message }}</h1>
+
+    <ul style="font-size:20px;">
+        {% for t in tournaments %}
+        <li><a href="/matches?tournament_id={{t['id'] }}">{{t['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
