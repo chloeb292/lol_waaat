@@ -23,34 +23,29 @@ def index():
 
 @app.route("/leagues")
 def leagues(): 
-    route_rule = request.url_rule
-    print("Current route rule -> %s <-- " % route_rule)
+    
     ll = ps.get_leagues()
     #return "Check console for list of leagues"
-    return render_template("leagues.html", message="This is the list of League of Legend Leagues!", leagues = ll, route_rule= route_rule );   
+    return render_template("leagues.html", message="This is the list of League of Legend Leagues!", leagues = ll);   
 
 @app.route("/series")
 def series(): 
     league_id = request.args["league_id"]
     series = ps.get_series(league_id)
     #return "Check console for list of leagues"
-    return render_template("series.html", series = series, route_rule= route_rule ); 
+    return render_template("series.html", series = series); 
 
 @app.route("/tournaments")
 def tournaments(): 
-    route_rule = request.url_rule
-    print("Current route rule -> %s <-- " % route_rule)
     tournaments = ps.get_tournaments(serie_id)
-    return render_template("tournaments.html", message="These are the tournaments for the series", tournaments = tournaments, route_rule= route_rule );   
+    return render_template("tournaments.html", message="These are the tournaments for the series", tournaments = tournaments);   
 
 
 @app.route("/matches")
 def matches(): 
-    route_rule = request.url_rule
-    print("Current route rule -> %s <-- " % route_rule)
     tournament_id = request.args["tournament_id"]
     matches = ps.get_matches(tournament_id)
-    return render_template("matches.html", message="These are the matches for the tournaments", matches = matches, route_rule= route_rule );
+    return render_template("matches.html", message="These are the matches for the tournaments", matches = matches);
 
 
 @app.route("/opponents")
